@@ -1,0 +1,10 @@
+
+// Header Img
+.user img {
+  @extend %member_1-s;
+}
+
+// Members Imgs
+.member img {
+  @extend %members;
+}

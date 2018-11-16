@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chart Display</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js" integrity="sha256-rjYnB0Bull7k2XkbJ03UNGqMuMieR769uQVGSSlsi6A=" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <div class="container grid">
+    <!--HEADER-->
+    <header>
+      <div class="header">
+        <div class="logo">
+         <h1>YourApp™</h1>
+        </div>
+        <div class="userProfile">
+          <div class="bell">
+            <img id="bell" src="icons/icon-bell.svg" alt="notifications" height="30" width="30"/>
+            <p class="active-alert">&#9679;</p>
+            <ul id="notifications"></ul>
+          </div>
+          <div class="user">
+             <img src="images/member-1.jpg" alt="Image of member 1" title="image_user_1">
+             <p>Member 1</p>     
+          </div>
+        </div>
+      </div>   
+    </header>
+    <!--SIDEBAR NAVIGATION-->
+    <nav class="navigation">
+      <div class="navFlex">
+        <ul class="navUl">
+          <li> 
+            <a href="#"><img alt="The dashboard icon" class="icon icon-dashboard" src="icons/icon-dashboard.svg"/></a>
+          </li>
+          <li> 
+            <a href="#"><img alt="The members icon" class="icon" src="icons/icon-members.svg"/></a>
+          </li>
+          <li>
+              <a href="#"><img alt="the visits icon" class="icon" src="icons/icon-visits.svg"/></a>
+          </li>
+          <li>
+              <a href="#"><img alt="the settings icon" class="icon" src="icons/icon-settings.svg"/></a> 
+          </li>
+       </ul>
+      </div>
+    </nav>
+    <!--MAIN-->
+    <main>
+      <!-- <div class="main-container"> -->
+          <!-- Search Bar -->
+        <div class="searchContainer">
+          <div class="searchHeading">
+            <h3>Dashboard</h3>
+          </div>
+          <div class="searchInput">
+           <i class="fa fa-search searchIcon"></i>
+           <input class="searchBox" type="search" placeholder="Search" name="search"> 
+          </div>
+        </div>
+        <!-- Charts -->
+        <div class="barChart">
+          <canvas id="barChart" width="400" height="400"></canvas>
+        </div>
+        <div class="lineChart">
+        <canvas id="lineChart" width="400" height="400"></canvas>
+        </div>
+        <div class="donutChart">
+        <canvas id="donutChart" width="400" height="400"></canvas>
+        </div>
+      <!-- </div> -->
+      <!-- Social Widgets -->
+      <div class="social">
+          <div class="socialStats">
+            <h1>Social Stats</h1>
+          </div>
+          <!-- Facebook optimized -->
+          <div class="widget">
+            <div class="facebook">
+              <svg id="facebook" height="56.693" width="56.693" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#fff" d="M40.43 21.739h-7.645v-5.014c0-1.883 1.248-2.322 2.127-2.322h5.395V6.125l-7.43-.029c-8.248 0-10.125 6.174-10.125 10.125v5.518h-4.77v8.53h4.77v24.137h10.033V30.269h6.77l.875-8.53z"/>
+              </svg>
+            </div>
+              <div class="stats">
+                <h3>Facebook</h3>
+                <h1>8,739</h1>
+              </div>
+          </div>
+          <!-- Twitter optimized -->
+          <div class="widget">
+            <div class="twitter">
+              <svg id="twitter" height="56.693" width="56.693"   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path fill="#fff" d="M32 3.1c-1.2.5-2.4.9-3.8 1 1.4-.8 2.4-2.1 2.9-3.6-1.3.8-2.7 1.3-4.2 1.6C25.8.8 24 0 22.2 0c-3.6 0-6.6 2.9-6.6 6.6 0 .5.1 1 .2 1.5-5.5-.3-10.3-2.9-13.6-6.9-.6 1-.9 2.1-.9 3.3 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.1-.3-3-.8v.1c0 3.2 2.3 5.8 5.3 6.4-.6.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.6-2.2 1.8-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.4-2.2 3.3-3.5z"
+                ></svg>
+            </div>
+                <div class="stats">
+                  <h3>Twitter</h3>
+                  <h1>10,345</h1>
+                </div>
+          </div>
+          <!-- Google optimized -->
+          <div class="widget">
+            <div class="google">
+              <svg id="google" height="56.693" width="56.693"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path fill="#fff" d="M17.7 25.7c0-.3 0-.5-.1-.8-.1-.2-.1-.5-.2-.7-.1-.2-.2-.4-.3-.7-.2-.2-.3-.4-.4-.6-.1-.2-.3-.3-.5-.6l-.5-.5c-.1-.1-.3-.3-.6-.5s-.5-.4-.6-.4-.3-.2-.6-.4-.5-.4-.6-.4h-1c-.7 0-1.4 0-2 .1-.7.1-1.4.2-2.1.5-.7.2-1.3.5-1.9.9s-1 .8-1.3 1.4c-.3.6-.5 1.3-.5 2.1 0 .9.2 1.7.7 2.3.5.7 1.1 1.2 1.8 1.6s1.5.7 2.3.9 1.6.3 2.4.3c.8 0 1.5-.1 2.2-.2.7-.2 1.3-.4 1.9-.8.6-.3 1.1-.8 1.4-1.4.3-.6.5-1.3.5-2.1zM15.4 9.1c0-.8-.1-1.6-.3-2.5-.2-.9-.5-1.7-.9-2.5s-.9-1.5-1.6-2c-.7-.5-1.5-.8-2.3-.8-1.2 0-2.1.4-2.8 1.3-.7.9-1 1.9-1 3.2 0 .6.1 1.2.2 1.9s.4 1.3.7 2c.3.7.7 1.3 1.1 1.8.4.5.9 1 1.5 1.3.6.3 1.2.5 1.9.5 1.2 0 2.1-.4 2.7-1.2.5-.7.8-1.7.8-3zM12.9 0h8.4l-2.6 1.5h-2.6c.9.6 1.6 1.4 2.1 2.4S19 6 19 7.1c0 .9-.1 1.8-.4 2.5-.3.7-.7 1.3-1.1 1.8-.4.4-.8.9-1.3 1.2-.4.4-.8.8-1.1 1.2-.3.4-.4.8-.4 1.3 0 .3.1.7.3 1 .2.3.5.6.8.9.3.3.7.6 1.1.9.4.3.8.7 1.2 1.1.4.4.8.8 1.1 1.3.3.5.6 1 .8 1.6.2.6.3 1.3.3 2 0 2.1-.9 3.9-2.7 5.4-1.9 1.7-4.6 2.5-8.1 2.5-.8 0-1.5-.1-2.3-.2-.8-.1-1.6-.3-2.3-.6-.8-.3-1.5-.7-2.1-1.1-.6-.4-1.1-1-1.5-1.7C1 27.6.8 26.9.8 26c0-.8.2-1.6.7-2.6.4-.8 1-1.5 1.8-2.1.8-.6 1.8-1.1 2.8-1.4 1-.3 2-.5 3-.7.9-.1 1.9-.2 2.9-.3-.8-1.1-1.2-2-1.2-2.9v-.5c0-.1.1-.3.1-.4 0-.1.1-.2.2-.4s.1-.3.1-.4c-.5.1-1 .1-1.3.1-1.9 0-3.5-.6-4.9-1.9-1.4-1.3-2-2.8-2-4.7C3 6 3.6 4.4 4.8 3 6 1.7 7.5.8 9.3.4c1.2-.3 2.4-.4 3.6-.4zm19.9 4.9v2.5h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9h4.9z"/>
+              </svg>                         
+            </div>
+              <div class="stats">
+               <h3>Google +</h3>
+               <h1>2,530</h1>
+              </div>            
+          </div>
+        </div>
+            <!-- New members section -->
+        <div class="new-members">
+          <h1>New Members</h1>
+            <div class="member">
+              <img src="images/member-1.jpg" alt="Victoria Chambers" class="member-pic">
+              <ul>
+                <li id="name">Victoria Chambers</li>
+                <li><a href="#">victoria80@example.com</a></li>
+              </ul>
+                <p>10/15/15</p>
+            </div>
+            <div class="member">
+              <img src="images/member-2.jpg" alt="Dale Byrd" class="member-pic">
+              <ul>
+                <li id="name">Dale Byrd</li>
+                <li><a href="#">dale.byrd52@example.com</a></li>
+              </ul>
+                <p>10/15/15</p>
+            </div>
+            <div class="member">
+              <img src="images/member-3.jpg" alt="Dawn Wood" class="member-pic">
+              <ul>
+                <li id="name">Dawn Wood</li>
+                <li><a href="#">dawn.wood16@example.com</a></li>
+              </ul>
+                <p>10/15/15</p>
+            </div>
+              <div class="member">
+              <img src="images/member-4.jpg" alt="Dan Oliver" class="member-pic">
+              <ul>
+                <li id="name">Dan Oliver</li>
+                <li><a href="#">dan.oliver82@example.com</a></li>
+              </ul>         
+                <p>10/15/15</p>             
+            </div>
+          </div>
+        <!-- Recent members section  -->
+        <div class="activity">
+            <h1>Recent Activity</h1>
+            <div class="member">
+              <img src="images/member-1.jpg" alt="Victoria Chambers" class="member-pic">
+              <ul>
+                <li>Victoria Chambers commented on YourApp's SEO Tips</li>
+                <li>4 hours ago</li>
+              </ul>
+              <div class="date">
+                <span>&#8250;</span>
+              </div>
+            </div>
+            <div class="member">
+              <img src="images/member-2.jpg" alt="Dale Byrd" class="member-pic">
+              <ul>
+                <li>Dale Byrd liked the post Facebook's Changes for 2016</li>
+                <li>5 hours ago</li>
+              </ul>
+              <div class="date">
+                <span>&#8250;</span>
+              </div>
+            </div>
+            <div class="member">
+              <img src="images/member-3.jpg" alt="Dawn Wood" class="member-pic">
+              <ul>
+                <li>Dawn Wood commented on Facebook's Changed for 2016</li>
+                <li>5 hours ago</li>
+              </ul>
+              <div class="date">
+                <span>&#8250;</span>
+              </div>
+            </div>
+              <div class="member">
+              <img src="images/member-4.jpg" alt="Dan Oliver" class="member-pic">
+              <ul>
+                <li>Dan Oliver posted YourApp's SEO Tips</li>
+                <li>1 day ago</li>
+              </ul>
+              <div class="date">
+                <span>&#8250;</span>
+              </div>
+            </div>
+          </div>
+          <!-- Message user -->
+          <div class="message">
+            <h1 class="title">Message User</h1>
+             <!-- form -->
+             <div class="form">
+              <form id="userForm" action="#" method="get">
+                  <div class="searchBar">
+                    <input id="search" type="search" placeholder="Search for User" name="userSearch" id="searchBar">
+                  </div>
+                  <ul id="autoCompleteResults"></ul>
+                  <div class="textArea">
+                    <textarea name="userMessage" id="userMessage" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+                  </div>
+                  <div class="button">
+                    <button  id="submitButton" type="submit">Submit</button>
+                  </div>
+              </form>
+            </div>
+         
+            </div>
+    
+            <!-- Settings -->
+            <div class="settings">
+              <h1>Settings</h1>
+              <!-- switch btns -->
+            	<div class="notification-widgets">
+                <div class="settings-group">
+                  <p>Send Email Notifications</p>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="emailSwitch" checked>
+                    <label class="onoffswitch-label" for="emailSwitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+      
+                <div class="settings-group">
+                  <p>Set Profile to Public</p>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="profileSwitch" checked>
+                    <label class="onoffswitch-label" for="profileSwitch">
+                       <span class="onoffswitch-inner"></span>
+                       <span class="onoffswitch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Timezone -->
+              <div class="timezone">
+                  <select required id="timezone" name="userTimezone">
+                    <option value="" disabled selected>Select Timezone</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+              </div>
+    
+              <!-- Save & Cancel Btn -->
+              <div class="save-cancel">
+                <div class="save">
+                  <button id="save">Save</button>
+                </div>
+                <div class="cancel">
+                  <button id="cancel">Cancel</button>
+                </div>
+              </div>
+      
+              </div>
+            
+
+
+
+      
+
+
+    </main>
+    
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

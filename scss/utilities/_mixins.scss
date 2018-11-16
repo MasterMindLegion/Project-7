@@ -1,0 +1,160 @@
+
+//=========================================================================
+//-------------------------Media Queries
+//=========================================================================
+@mixin mg($break) {
+
+  $value: map-get($breakpoints, $break);
+  @media (min-width: $value) {
+    @content;                   
+}  
+}
+
+
+
+//=========================================================================
+//-------------------------Grid
+//=========================================================================
+
+@mixin grid ( 
+  $disp: grid,
+  $col: null,
+  $row: null,
+  $area: null,
+  $temp: null,
+  $gap-col: null,
+  $gap-row: null,
+  $gap:null,
+  $just-items: null,
+  $align-items:null,
+  $just-content: null,
+  $align-content: null,
+  $auto-rows: null,
+  $auto-col: null,
+  $auto-flow: null,
+  $grid: null ) {
+  grid-template-columns: $col;
+  grid-template-rows: $row;
+  grid-template-areas: $area;
+  grid-template: $temp;
+  grid-column-gap: $gap-col;
+  grid-row-gap: $gap-row;
+  grid-gap: $gap;
+  justify-items: $just-items;
+  align-items: $align-items;
+  justify-content: $just-content;
+  align-content: $align-content;
+  grid-auto-rows: $auto-rows;
+  grid-auto-columns: $auto-col;
+  grid-auto-flow: $auto-flow;
+  grid: $grid;
+  @content;
+  }
+//=========================================================================
+//-------------------------Grid Items
+//=========================================================================
+@mixin gridChildren ( 
+  $col-start: null,
+  $col-end: null,
+  $row-start: null,
+  $row-end: null,
+  $col: null,
+  $row: null,
+  $area: null,
+  $just: null,
+  $align: null){
+  grid-column-start: $col-start;
+  grid-column-end: $col-end;
+  grid-row-start: $row-start;
+  grid-row-end: $row-end;
+  grid-column: $col;
+  grid-row: $row;
+  grid-area: $area;
+  justify-self: $just;
+  align-self: $align;
+  @content;
+  }
+
+
+
+//=========================================================================
+//-------------------------FlexContainer
+//=========================================================================
+@mixin flexy (
+       $disp:flex,
+       $dir:null,
+       $wrap:null,
+       $just:null,
+       $align:null,
+       $flow: null,
+       $alignself: null,
+       $alignitems: null,
+       $textalign: null,
+       $flex: null,
+       $basis: null,
+       $order: null,
+       $width: null,
+       $margin: null,
+       $padding: null ) {
+       display: $disp;
+       flex-direction: $dir;
+       flex-wrap: $wrap;
+       justify-content: $just;
+       align-content: $align;
+       flex-flow: $flow;
+       align-self: $alignself;
+       align-items: $alignitems;
+       text-align: $textalign;
+       flex-basis: $basis;
+       width: $width;
+       margin: $margin;
+       padding: $padding;
+       flex: $flex;
+       order: $order;
+       @content;
+}
+
+//=========================================================================
+//-------------------------FlexItems
+//=========================================================================
+@mixin flexyitem(
+      $flex: 1,
+      $order: null,
+      $alignself: null,
+      $padding: null ) {
+      flex: $flex;
+      order: $order;
+      align-self: $alignself;
+       padding: $padding;
+    }
+
+//=========================================================================
+//------------------------Buttons
+//=========================================================================
+@mixin btn (
+  $disp: null,
+  $width: null,
+  $padding: null,
+  $margin: null,
+  $border: null,
+  $back: null,
+  $color: null,
+  $radius: null,
+  $t-dec: null,
+  $l-type: null,
+  $trans: null,
+  $textalign: null,) {
+  display: $disp;
+  width: $width;
+  padding: $padding;
+  margin: $margin;
+  border: $border;
+  border-radius: $radius;
+  border-color: $back;
+  color: $color;
+  text-decoration: $t-dec;
+  list-style:$l-type;
+  text-transform: $trans;
+  text-align: $textalign;
+  @content;
+}

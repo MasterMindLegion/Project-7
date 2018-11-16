@@ -1,0 +1,142 @@
+//=========================================================================
+//the universal selector (*)
+//=========================================================================
+* {
+  @extend %universal;
+ }
+ //=========================================================================
+ //body
+ //=========================================================================
+ body {
+   @extend %clearfix, %body;	
+ }
+ //=========================================================================
+ //container
+ //=========================================================================
+ .container {
+   @extend %clearfix, %container;
+ }
+ 
+ //=========================================================================
+ //header
+ //=========================================================================
+ 
+ header {
+   @extend %header,;
+   h1 {
+     font-size: 20px;
+   }
+   p {
+     font-size: 10px;
+   }
+   @include mg ("md") {
+    h1 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 15px;
+    }
+   }
+ }
+ //======== Icon
+ #bell {
+  @extend  %bell-s;
+  &:hover {
+      transform: skew(-10deg);  
+  };
+  @include mg("md") {
+     min-width: 50px;
+  }
+}
+//======== Notification
+.notification {
+  @extend %notification;
+}
+ //=========================================================================
+ //navigation
+ //=========================================================================
+ .navigation {
+   @extend %navigation;
+ }
+ .navUl img:hover {
+   @extend %ul-hover;
+ }
+ 
+ //=========================================================================
+ //main
+ //=========================================================================
+//======== Search Container
+.searchContainer {
+  h3 {
+    color: $headingsColor;
+  }
+}
+//======== Charts
+.lineChart,
+.barChart,
+.donutChart {
+  @extend %charts;
+}
+
+//======== Social Widgets
+.facebook,
+.twitter,
+.google {
+  @extend %widget;
+}
+.widget {
+  border: 1px solid grey;
+  h1 {
+    color: $navColor;
+  }
+}
+.socialStats h1 {
+ @extend %socialStats-heading;
+
+
+
+ 
+}
+
+//======== Alert
+.alert {
+ background-color:  $headingsColor;
+ color: #fff;
+}
+.delete {
+  color: black;
+  text-decoration: none;
+}
+
+//======== New Members
+.member {
+  font-size: 14px;
+}
+//======== Form
+#search {
+  @extend %input;
+  
+}
+#userMessage {
+  @extend %input;
+}
+
+//======== Timezone
+#timezone {
+  @extend %time;
+
+}
+
+//======== Class Visible
+.results{
+  padding: 5%;
+  display: block;
+  border: 1px solid grey;
+}
+//======== Class Highlighted
+.highlighted:first-child {
+  background-color: aquamarine;
+}
+.hide {
+  display: none;
+}
