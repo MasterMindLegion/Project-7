@@ -81,8 +81,6 @@ header {
 #notifications{
  position: relative;
  width: 50%;
- top: 40px;
- right: 0px;
 }
 //=========================================================================
 // Navigation
@@ -205,6 +203,7 @@ main {
 // lineChart
 .lineChart {
   @include flexy(
+  
   );
   height: 100%;
   width: 100%;
@@ -219,6 +218,7 @@ main {
   padding: 5%;
   grid-area: donutChart;
 }
+
 
 canvas {
   @extend %canvas;

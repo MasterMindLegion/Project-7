@@ -10,12 +10,12 @@ bell.addEventListener("click", () => {
   // alertBtn.style.color = "white"; 
   alertBtn.style.display = "none";
   notifications.innerHTML += `
-  <div class="notification">
+  <ul class="notification">
     <li>
       <span>Notifaction 1</span>
     </li>
   </div>
-  <div class="notification">
+  <ul class="notification">
     <li>
       <span>Notifaction 2</span>
     </li>
@@ -111,8 +111,7 @@ let myLineChart = new Chart(lineChart,{
   data: {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-7", "18-24", "25-31"],
      datasets: [{
-        display: "[false]",
-
+       label: "Hourly",
          data: [500, 1000, 500, 1250, 1750, 1250, 1500, 1000, 2000, 1500, 2000],
          backgroundColor: [
          'rgb(216, 218, 255)',
@@ -121,8 +120,42 @@ let myLineChart = new Chart(lineChart,{
         'rgb(115, 119, 191)',
          ],
          borderWidth: 1
-    }]
-  },
+    }, {
+      label: "Daily",
+         data: [30, 80, 500, 1250, 1750, 1250, 1500, 1000, 500, 1500, 150],
+         backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+         ],
+         borderColor: [
+        'rgb(115, 119, 191)',
+         ],
+         borderWidth: 1
+    }, {
+      label: "Weekly",
+         data: [2000,1700, 500, 1250, 1750, 1250, 1500, 1000, 500, 2000, 150],
+         backgroundColor: [
+          'rgba(255, 206, 86, 0.2)',
+         ],
+         borderColor: [
+        'rgb(115, 119, 191)',
+         ],
+         borderWidth: 1
+    }, {
+      label: "Monthly",
+      data: [1500,1700, 500, 1250, 1750, 2000, 1500, 2000, 500, 2000, 150],
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.2)',
+      ],
+      borderColor: [
+     'rgb(115, 119, 191)',
+      ],
+      borderWidth: 1
+    }
+  
+  ],
+   
+  }, 
+ 
   options: {
     responsive: true,
     maintainAspectRatio: false,
@@ -133,7 +166,7 @@ let myLineChart = new Chart(lineChart,{
     },
     legend: {
       position: "right",
-      display: false,
+      display: true,
       labels: {
         fontColor: "#000",
       } 

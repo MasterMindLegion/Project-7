@@ -473,9 +473,7 @@ header {
 
 #notifications {
   position: relative;
-  width: 50%;
-  top: 40px;
-  right: 0px; }
+  width: 50%; }
 
 nav {
   display: flex;
@@ -740,11 +738,11 @@ canvas {
 .notification {
   position: absolute;
   right: 0;
-  top: 0px;
+  top: 35px;
   width: 150px;
   font-size: 0.75rem;
   background: #538AC5;
-  z-index: 1;
+  z-index: 2;
   padding: 20px;
   border-radius: 4px;
   box-shadow: 2px 2px 5px #4D4C72; }
