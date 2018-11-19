@@ -396,18 +396,25 @@ userMessage.addEventListener("click", (e) => {
 })
 const checkIfSet = () => {
   const trimmedInput = userMessage.value.trim();
-  if (trimmedInput == "") {
+  const trimmedtarget = targetInput.value.trim();
+  if (trimmedInput == "" && trimmedtarget == "") {
     submitButton.disabled = true;
-  } else {
+  } else  {
     submitButton.disabled = false;
     console.log('enabled');
   }
 };
 const submit = (e) => {
- alert("Message was send")
-  e.preventDefault();
-}
+  const trimmedInput = userMessage.value.trim();
+  const trimmedtarget = targetInput.value.trim();
+  if (trimmedInput == "" && trimmedtarget == "") {
+    alert("Message was send");
+  }
+  alert("You need To add text");
+   e.preventDefault();
+ }
 userMessage.addEventListener('input', checkIfSet);
+targetInput.addEventListener("input", checkIfSet);
 submitButton.addEventListener('click', submit);
 checkIfSet();
 
