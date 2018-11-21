@@ -394,29 +394,31 @@ function moveCursor ( pos ) {
 userMessage.addEventListener("click", (e) => {
   userMessage.value = " ";
 })
-const checkIfSet = () => {
-  const trimmedInput = userMessage.value.trim();
-  const trimmedtarget = targetInput.value.trim();
-  if (trimmedInput == "" && trimmedtarget == "") {
-    submitButton.disabled = true;
-  } else  {
-    submitButton.disabled = false;
-    console.log('enabled');
-  }
-};
+// const checkIfSet = () => {
+//   const trimmedInput = userMessage.value.trim();
+//   const trimmedtarget = targetInput.value.trim();
+//   if (trimmedInput == "" && trimmedtarget == "") {
+//     submitButton.disabled = true;
+//   } else  {
+//     submitButton.disabled = false;
+//     console.log('enabled');
+//   }
+//   e.preventDefault();
+// };
 const submit = (e) => {
   const trimmedInput = userMessage.value.trim();
   const trimmedtarget = targetInput.value.trim();
-  if (trimmedInput == "" && trimmedtarget == "") {
+  if (trimmedInput != "" && trimmedtarget != "") {
     alert("Message was send");
+  } else {
+    alert("You need To add text");
+   
   }
-  alert("You need To add text");
-   e.preventDefault();
+  e.preventDefault();
  }
-userMessage.addEventListener('input', checkIfSet);
-targetInput.addEventListener("input", checkIfSet);
+
 submitButton.addEventListener('click', submit);
-checkIfSet();
+
 
 //=========================================================================
 // Local Storage
